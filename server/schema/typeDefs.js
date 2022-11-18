@@ -26,13 +26,13 @@ const typeDefs = gql`
 
   type Auth {
     token: ID!
-    user: User
+    profile: Profile
   }
 
   type Query {
     profiles: [Profile]
     profile(name: String!): Profile
-    post(name: String): [Post]
+    posts(name: String): [Post]
     post(postId: ID!): Post
   }
 
