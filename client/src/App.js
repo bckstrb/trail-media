@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
+import trailSearch from './utils/API';
 
 function App() {
+  trailSearch(40.76, -111.89)
   return (
     <div className="App">
       <header className="App-header">
