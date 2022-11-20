@@ -1,25 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
-import trailSearch from './utils/API';
+import React, { useState }  from 'react';
+// import trailSearch from './utils/API';
+import SignUp from './pages/SignUp';
+import Login from './pages/Login';
 
 function App() {
-  trailSearch(40.76, -111.89)
+  // trailSearch(40.76, -111.89)
+  const [currentPage, setCurrentPage] = useState('SignUp'); //Change to Home
+
+  const renderPage = () => {
+    // if (currentPage === 'Home') {
+    //   return <Home />
+    // }
+    if (currentPage === 'SignUp') {
+      return <SignUp currentPage={currentPage} handlePageChange={handlePageChange} />
+    }
+    if (currentPage === 'Login') {
+      return <Login currentPage={currentPage} handlePageChange={handlePageChange} />
+    }
+  }
+
+  const handlePageChange = (page) => setCurrentPage(page);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {renderPage()}
     </div>
   );
 }

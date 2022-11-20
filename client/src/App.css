@@ -28,6 +28,13 @@
   color: #61dafb;
 }
 
+/* We can remove this is we want to, or put it somewhere else */
+a { 
+  color: #548b65;
+  text-decoration: none;
+  padding-left: 4px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
