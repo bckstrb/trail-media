@@ -1,0 +1,51 @@
+.container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 5%;
+    background-image: url("../img/stones.jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search {
+    width: 50%;
+    max-height: 200px;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 10px 20px;
+    font: bold;
+}
+
+.search input {
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 24px 20px;
+    font-size: 20px;
+    color: #cac7ff;
+}
+
+::placeholder {
+    color: #022e19;
+}
+
+.search button img {
+    width: 25px;
+}
+
+.search button {
+    border: 0;
+    border-radius: 20%;
+    width: 60px;
+    height: 40px;
+    background: #022e19;
+    color: white;
+    cursor: pointer;
+    padding-right: 10px;
+}

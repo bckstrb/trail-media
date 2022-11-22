@@ -11,9 +11,9 @@ export default function Navbar({ currentPage, handlePageChange }) {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
-                        {/* <li class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#home" onClick = {() => handlePageChange("Home")}>Home</a>
-                        </li> */}
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#signup" onClick = {() => handlePageChange("SignUp")}>Sign Up</a>
                         </li>
