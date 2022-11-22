@@ -21,6 +21,7 @@ export default function Navbar({ currentPage, handlePageChange }) {
 
                 <div class="collapse navbar-collapse links" id="navbarNav">
                     <ul class="navbar-nav">
+
                         <li class="nav-item">
                         </li>
                         <li class="nav-item">
