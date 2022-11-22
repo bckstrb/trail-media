@@ -1,0 +1,16 @@
+:root {
+    --accent-color: #67A97B;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    width: 200;
+    height: 100;
+}
+
+.links {
+    display: flex;
+    justify-content: flex-end;
+    color:var(--accent-color);
+}

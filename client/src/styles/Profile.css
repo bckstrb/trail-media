@@ -1,0 +1,65 @@
+:root {
+    --accent-color: #67A97B;
+    --border-color: #3F5345;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    padding: 20px;
+    border: solid;
+    border-color: var(--border-color);
+    border-radius: 10px;
+}
+
+input {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 10px;
+    margin: 10px;
+    font-size: 14px;
+    border-color: var(--border-color);
+    border-radius: 8px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    line-height: 1.1rem;
+    margin-top: 5%;
+}
+
+.title {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+}
+
+.posts {
+    display: flex;
+    border: solid;
+    border-color: var(--border-color);
+    border-radius: 10px;
+    padding: 20px;
+    width: 800px;
+    margin-bottom: 20px;
+}
+
+.post {
+    display: flex;
+    justify-content: center;
+    border: solid;
+    border-color: var(--border-color);
+    border-radius: 5px;
+    margin-bottom: 25px;
+    height: 200px;
+}
+
+.post :hover {
+    background-color: var(--accent-color);
+    cursor: pointer;
+}
+

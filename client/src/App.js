@@ -11,7 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   // trailSearch(40.76, -111.89)
-  const [currentPage, setCurrentPage] = useState('SignUp');
+  const [currentPage, setCurrentPage] = useState('Profile');
   const renderPage = () => {
     if (currentPage === 'Home') {
       return <Home />
