@@ -4,7 +4,7 @@ const styles = {
     containerStyle: {
         display: 'flex',
         justifyContent: 'center',
-        marginTop: '10%',
+        marginTop: '5%',
         lineHeight: '1.1',
     },
     formStyle: {
@@ -14,7 +14,7 @@ const styles = {
         width: '400px',
         padding: '10px',
         border: 'solid',
-        borderColor: 'black',
+        borderColor: '#3F5345',
         borderRadius: '10px',
     },
     h1Style: {
@@ -29,6 +29,7 @@ const styles = {
         padding: '10px',
         marginTop: '10px',
         fontSize: '14px',
+        borderColor: '#3F5345',
         borderRadius: '8px',
     },
     buttonStyle: {
