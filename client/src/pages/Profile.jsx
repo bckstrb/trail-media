@@ -9,9 +9,9 @@ export default function Profile() {
 
     return (
 
-        <div class="container">
+        <div className="container">
             <div>
-                <div class="title">
+                <div className="title">
                     <h2>Profile</h2>
                 </div>
                 <form>
@@ -57,44 +57,44 @@ export default function Profile() {
                     </div>
                 </form>
 
-                <div class="title">
+                <div className="title">
                     <h2> Previous Posts </h2>
                 </div>
 
-                <div class="row posts">
-                <div class="col-sm-4">
-                        <div class="post">
+                <div className="row posts">
+                <div className="col-sm-4">
+                        <div className="post">
                             <div>
-                                <h5 class="card-title">Trail Name</h5>
-                                <p class="card-text">User Post about the trail </p>
+                                <h5 className="card-title">Trail Name</h5>
+                                <p className="card-text">User Post about the trail </p>
                             
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-sm-4">
-                        <div class="post">
+                    <div className="col-sm-4">
+                        <div className="post">
                             <div>
-                                <h5 class="card-title">Trail Name</h5>
-                                <p class="card-text">User Post about the trail </p>
+                                <h5 className="card-title">Trail Name</h5>
+                                <p className="card-text">User Post about the trail </p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-sm-4">
-                        <div class="post">
+                    <div className="col-sm-4">
+                        <div className="post">
                             <div>
-                                <h5 class="card-title">Trail Name</h5>
-                                <p class="card-text">User Post about the trail </p>
+                                <h5 className="card-title">Trail Name</h5>
+                                <p className="card-text">User Post about the trail </p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-sm-4">
-                        <div class="post">
+                    <div className="col-sm-4">
+                        <div className="post">
                             <div>
-                                <h5 class="card-title">Trail Name</h5>
-                                <p class="card-text">User Post about the trail </p>
+                                <h5 className="card-title">Trail Name</h5>
+                                <p className="card-text">User Post about the trail </p>
                             </div>
                         </div>
                     </div>

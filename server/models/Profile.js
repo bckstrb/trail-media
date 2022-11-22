@@ -19,7 +19,14 @@ const profileSchema = new Schema({
     required: true,
     minlength: 5,
   },
+  posts: [
+    {
+      type: String,
+      trim: true,
+    },
+  ],
 });
+
 
 profileSchema.pre('save', async function (next) {
   if (this.isNew || this.isModified('password')) {
