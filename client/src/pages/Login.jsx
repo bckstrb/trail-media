@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { useMutation } from '@apollo/client';
+import { LOGIN_USER } from '../utils/mutations';
+import Auth from '../utils/auth';
 
 const styles = {
     containerStyle: {
@@ -43,25 +46,39 @@ const styles = {
     }
 };
 
-export default function Login({ currentPage, handlePageChange }) {
+export default function Login({ currentPage, handlePageChange, props }) {
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+        const [formState, setFormState] = useState({ email: '', password: '' });
+        const [login, { error, data }] = useMutation(LOGIN_USER);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setEmail('');
-        setPassword('');
-        return alert('Form Submitted');
-    }
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+        console.log(formState);
+        try {
+          const { data } = await login({
+            variables: { ...formState },
+          });
+    
+          Auth.login(data.login.token);
+        } catch (e) {
+          console.error(e);
+        }
+    
+        // clear form values
+        setFormState({
+          email: '',
+          password: '',
+        });
+      };
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-
-        if (name === 'email') return setEmail(value);
-        if (name === 'password') return setPassword(value);
-    }
-
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+    
+        setFormState({
+          ...formState,
+          [name]: value,
+        });
+      };
 
     return (
         <div style={styles.containerStyle}>
@@ -72,29 +89,29 @@ export default function Login({ currentPage, handlePageChange }) {
                 <div>
                     <input
                         style={styles.inputStyle}
-                        value={email}
+                        value={formState.email}
                         placeholder="Email Address"
                         name="email"
                         type="text"
                         onChange={handleChange}
-                        required="true"
+                        required={true}
                     >
                     </input>
                     <br></br>
                     <input
                         style={styles.inputStyle}
-                        value={password}
+                        value={formState.password}
                         placeholder="Password"
                         name="password"
                         type="text"
                         onChange={handleChange}
-                        required="true"
+                        required={true}
                     >
                     </input>
                     <button
                         style={styles.buttonStyle}
                         type="button"
-                        onClick={handleSubmit}>
+                        onClick={handleFormSubmit}>
                         Log In
                     </button>
                     <div>

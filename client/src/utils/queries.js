@@ -5,17 +5,42 @@ export const QUERY_PROFILES = gql`
     profiles {
       _id
       name
-      posts
+      email
+      posts {
+        _id
+        postText
+        createdAt
+      }
     }
   }
 `;
 
 export const QUERY_SINGLE_PROFILE = gql`
-  query singleProfile($profileId: ID!) {
-    profile(profileId: $profileId) {
+query singleProfile($profileId: ID!) {
+  profile(_id: $profileId) {
+    _id
+    name
+    email
+    posts {
+      _id
+      postText
+      createdAt
+    }
+  }
+}
+`
+
+export const QUERY_SINGLE_POSTS = gql`
+  query singlePost($postId: ID!) {
+    profile(postId: $postId) {
       _id
       name
-      posts
+      email
+      posts {
+        _id
+        commentText
+        createdAt
+      }
     }
   }
 `;

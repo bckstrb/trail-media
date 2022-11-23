@@ -22,7 +22,7 @@ const profileSchema = new Schema({
   posts: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Posts',
+      ref: 'Post',
     },
   ],
 });
