@@ -31,7 +31,7 @@ const typeDefs = gql`
 
   type Query {
     profiles: [Profile]
-    profile(name: String!): Profile
+    profile(_id: ID!): Profile
     posts(name: String): [Post]
     post(postId: ID!): Post
   }
