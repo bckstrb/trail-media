@@ -16,15 +16,14 @@ export const QUERY_PROFILES = gql`
 `;
 
 export const QUERY_SINGLE_PROFILE = gql`
-query singleProfile($profileId: ID!) {
-  profile(_id: $profileId) {
+query singleProfile($_id: ID!) {
+  profile(_id: $_id) {
     _id
     name
     email
     posts {
       _id
-      postText
-      createdAt
+      
     }
   }
 }
