@@ -28,7 +28,6 @@ query singleProfile($_id: ID!) {
   }
 }
 `
-
 export const QUERY_SINGLE_POSTS = gql`
   query singlePost($postId: ID!) {
     profile(postId: $postId) {
