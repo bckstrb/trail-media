@@ -8,6 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 
 .search {
@@ -19,6 +20,7 @@
     border-radius: 60px;
     padding: 10px 20px;
     font: bold;
+    
 }
 
 .search input {
@@ -27,8 +29,8 @@
     border: 0;
     outline: none;
     padding: 24px 20px;
-    font-size: 20px;
-    color: #cac7ff;
+    font-size: 30px;
+    color: #022e19;
 }
 
 ::placeholder {
@@ -48,4 +50,10 @@
     color: white;
     cursor: pointer;
     padding-right: 10px;
+}
+.latitude {
+    text-align: center;
+}
+.longitude {
+    text-align:center;
 }

@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState } from 'react';
-// import trailSearch from './utils/API';
+import trailSearch from './utils/API';
 import SignUp from './pages/SignUp';
 import Login from './pages/Login';
 import Home from './pages/Home';
@@ -41,7 +41,7 @@ const client = new ApolloClient({
 });
 
 function App() {
-  // trailSearch(40.76, -111.89)
+  // trailSearch(40.76,-111.89);
   const [currentPage, setCurrentPage] = useState('Home');
   const renderPage = () => {
     if (currentPage === 'Home') {
