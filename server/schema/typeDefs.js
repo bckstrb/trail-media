@@ -11,8 +11,8 @@ const typeDefs = gql`
 
   type Post {
     _id: ID
-    thoughtText: String!
-    thoughtAuthor: String!
+    postText: String!
+    postAuthor: String!
     createdAt: String
     comments: [Comment]!
   }
