@@ -7,17 +7,17 @@
 form {
     display: flex;
     flex-direction: column;
-    width: 800px;
     padding: 20px;
     border: solid;
     border-color: var(--border-color);
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
+/* Not being used */
 input {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 70%;
     padding: 10px;
     margin: 10px;
     font-size: 14px;
@@ -27,7 +27,7 @@ input {
 
 .container {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     line-height: 1.1rem;
     margin-top: 5%;
 }
@@ -42,7 +42,7 @@ input {
     display: flex;
     border: solid;
     border-color: var(--border-color);
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 20px;
     width: 800px;
     margin-bottom: 20px;
@@ -53,13 +53,13 @@ input {
     justify-content: center;
     border: solid;
     border-color: var(--border-color);
-    border-radius: 5px;
+    border-radius: 8px;
     margin-bottom: 25px;
     height: 200px;
 }
 
-.post :hover {
-    background-color: var(--accent-color);
+.posts :hover {
+    border-color: var(--accent-color);
     cursor: pointer;
 }
 

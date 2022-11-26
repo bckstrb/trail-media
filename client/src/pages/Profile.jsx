@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import "../styles/Profile.css";
 import { QUERY_SINGLE_PROFILE } from "../utils/queries";
-import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import Auth from '../utils/auth';
+// import Link from 'react-router-dom';
 
 export default function Profile() {
   const user = Auth.getProfile();
-  console.log(user.data._id);
   const profileId = user.data._id;
 
   const { loading, data } = useQuery(QUERY_SINGLE_PROFILE, {
@@ -15,10 +14,10 @@ export default function Profile() {
   });
 
   const profile = data?.profile || {};
-  console.log(profile);
-  console.log(data);
 
-  // const [firstName, setFirstName] = useState('');
+  // const postList = data?.posts || [];
+
+  // const [count, setCount] = useState('');
   // const [lastName, setLastName] = useState('');
   // const [email, setEmail] = useState('');
 
@@ -30,20 +29,16 @@ export default function Profile() {
         </div>
         <form>
           <div>
-            <label for="first-name" id="first-name-label">
-              <h5>Name</h5>
-            </label>
+            <h5> User: {profile.name} </h5>
             <br></br>
-            <input value={profile.name} type="text" name="first-name"></input>
+            <h5>Email: {profile.email}</h5>
             <br></br>
-            <label for="email" id="email-label">
-              <h5>User's Email</h5>
-            </label>
-            <br></br>
-            <input value={profile.email} type="text" name="email"></input>
+            <h5>Number of posts: {profile.posts} </h5>
           </div>
         </form>
+      </div>
 
+      <div>
         <div className="title">
           <h2> Previous Posts </h2>
         </div>
@@ -54,6 +49,15 @@ export default function Profile() {
               <div>
                 <h5 className="card-title">Trail Name</h5>
                 <p className="card-text">User Post about the trail </p>
+                {/* {postList.map((matchup) => { From Mern MiniProj
+                  return (
+                    <li key={matchup._id}>
+                      <Link to={{ pathname: `/matchup/${matchup._id}` }}>
+                        {matchup.tech1} vs. {matchup.tech2}
+                      </Link>
+                    </li>
+                  );
+                })} */}
               </div>
             </div>
           </div>
