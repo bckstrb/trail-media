@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState } from 'react';
-import trailSearch from './utils/API';
+// import trailSearch from './utils/API';
 import SignUp from './pages/SignUp';
 import Login from './pages/Login';
 import Home from './pages/Home';

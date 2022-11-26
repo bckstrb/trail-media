@@ -14,6 +14,7 @@ export default function Profile() {
   });
 
   const profile = data?.profile || {};
+  // LOOK AT MERN 24 FOR THOUGHT(POST) / COMMENTS EXAMPLE
 
   // const postList = data?.posts || [];
 
