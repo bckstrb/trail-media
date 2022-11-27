@@ -1,0 +1,30 @@
+:root {
+    --accent-color: #67A97B;
+    --border-color: #3F5345;
+}
+
+.profile-posts-div {
+    display: flex;
+    border: solid;
+    border-color: var(--border-color);
+    border-radius: 20px;
+    padding: 20px;
+    width: 800px;
+    margin-bottom: 20px;
+}
+
+.profile-post {
+    display: flex;
+    justify-content: center;
+    border: solid;
+    border-color: var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 25px;
+    height: 200px;
+    padding: 10px;
+}
+
+.profile-posts-div :hover {
+    border-color: var(--accent-color);
+    cursor: pointer;
+}
