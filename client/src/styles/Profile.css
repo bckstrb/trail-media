@@ -37,29 +37,3 @@ input {
     justify-content: flex-start;
     padding: 10px;
 }
-
-.posts {
-    display: flex;
-    border: solid;
-    border-color: var(--border-color);
-    border-radius: 20px;
-    padding: 20px;
-    width: 800px;
-    margin-bottom: 20px;
-}
-
-.post {
-    display: flex;
-    justify-content: center;
-    border: solid;
-    border-color: var(--border-color);
-    border-radius: 8px;
-    margin-bottom: 25px;
-    height: 200px;
-}
-
-.posts :hover {
-    border-color: var(--accent-color);
-    cursor: pointer;
-}
-

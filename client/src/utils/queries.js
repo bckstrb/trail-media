@@ -23,18 +23,33 @@ query singleProfile($_id: ID!) {
     email
     posts {
       _id
-      
+      postText
+      createdAt
     }
   }
 }
-`
+`;
+
+
+export const QUERY_POSTS = gql`
+  query getPosts {
+    posts {
+      _id
+      postText
+      postAuthor
+      createdAt
+    }
+  }
+`;
+
 export const QUERY_SINGLE_POSTS = gql`
   query singlePost($postId: ID!) {
-    profile(postId: $postId) {
+    post(postId: $postId) {
       _id
-      name
-      email
-      posts {
+      postText
+      postAuthor
+      createdAt
+      comments {
         _id
         commentText
         createdAt

@@ -2,9 +2,14 @@ const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
 const postSchema = new Schema({
+  // trailId: {
+  //   type: String,
+  //   required: "Needs the trailId from the api",
+  //   trim: true,
+  // },
   postText: {
     type: String,
-    required: 'You need to leave a thought!',
+    required: 'You need to write a post!',
     minlength: 1,
     maxlength: 280,
     trim: true,
