@@ -41,7 +41,7 @@ const client = new ApolloClient({
 });
 
 function App() {
-  // trailSearch(40.76, -111.89)
+  // trailSearch(40.76,-111.89);
   const [currentPage, setCurrentPage] = useState('Home');
   const renderPage = () => {
     if (currentPage === 'Home') {
