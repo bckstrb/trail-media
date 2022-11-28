@@ -25,10 +25,6 @@ export default function Posts(apiData) { //get the data that the user chose from
                 {/* need to do inline styling?? */}
                 <div className='trail-info'>
                     <h2> apiData.name </h2> {/*{apiData.name} */}
-                    <div className='trail-rating'>
-                        <p> apiData.difficutly </p>
-                        <p> apiData.rating </p>
-                    </div>
                     <div className='trail-location'>
                         <p> apiData.city </p>
                     </div>

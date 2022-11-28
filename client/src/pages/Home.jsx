@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useState } from "react";
 import "../styles/Home.css";
 import trailSearch from "../utils/API";
+import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
+import Posts from "../pages/Posts"
 
 export default function Home() {
   const [searchedTrails, setSearchedTrails] = useState([]);
@@ -26,6 +28,7 @@ export default function Home() {
         city: trail.city,
         name: trail.name,
         description: trail.description,
+        directions: trail.directions,
         image: trail.thumbnail || "",
       }));
       console.log(trailData);
@@ -85,9 +88,6 @@ export default function Home() {
           />
           <button type="submit">Search</button>
         </form>
-      </div>
-      <div>
-          <p>name{searchedTrails[0].name}</p>
       </div>
     </div>
   );
