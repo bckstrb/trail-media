@@ -5,11 +5,17 @@ import { QUERY_POSTS } from "../utils/queries";
 import { useQuery } from '@apollo/client';
 import Auth from '../utils/auth';
 import PostList from '../components/PostList';
+import { Navbar, Nav,Button, Container, Modal, Tab } from 'react-bootstrap';
+
+
+
+
 
 
 
 
 export default function Posts(apiData) { //get the data that the user chose from the home page from the api call and pass it as variable
+    const [showModal, setShowModal] = useState(false);
 
     //probably need the trailId like we did with profileId and hope the trailId is the same each time to add posts to that certain trail?
     // maybe it'll be like comments instead of posts?? 
@@ -49,8 +55,46 @@ export default function Posts(apiData) { //get the data that the user chose from
                 <PostList 
                     posts={posts}
                 />
+                 <Button variant="success" onClick={() => setShowModal(true)}>Create A Post</Button>
             </div>
 
+            <Modal
+        size='lg'
+        show={showModal}
+        onHide={() => setShowModal(false)}
+        aria-labelledby='signup-modal'>
+        {/* tab container to do either signup or login component */}
+        <Tab.Container defaultActiveKey='login'>
+          <Modal.Header closeButton>
+            <Modal.Title id='signup-modal'>
+              <Nav variant='pills'>
+                <Nav.Item>
+                    <form>
+                        {/* <input type="text" value={formState.posts}placeholder="Post"></input> */}
+                        <input type="text" placeholder="Post"></input>
+                        <input type="text" placeholder="Post Author"></input>
+                        <Button variant="success"type="submit">Create Post</Button>
+                    </form>
+                  
+                </Nav.Item>
+                <Nav.Item>
+                  
+                </Nav.Item>
+              </Nav>
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Tab.Content>
+              <Tab.Pane eventKey='login'>
+               
+              </Tab.Pane>
+              <Tab.Pane eventKey='signup'>
+              
+              </Tab.Pane>
+            </Tab.Content>
+          </Modal.Body>
+        </Tab.Container>
+      </Modal>
 
         </div>
     )
