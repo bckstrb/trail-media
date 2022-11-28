@@ -73,7 +73,7 @@ export default function Home({ currentPage, handlePageChange }) {
                   <p className='small'>Trail Name: {trails.name}</p>
                   <Card.Text>Trail Desciption: {trails.description}</Card.Text>
                   {/* <Button color="primary" className="apibtn" onClick={<Posts />}>View Trail</Button> */}
-                  <a href="#posts" onClick={() => handlePageChange('Posts')}
+                  <a id="apibtn"href="#posts" onClick={() => handlePageChange('Posts')}
                     className={currentPage === 'Posts' ? 'link active' : 'link'}
 
                   >

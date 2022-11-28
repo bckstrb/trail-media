@@ -57,7 +57,7 @@
 .longitude {
     text-align:center;
 }
-.apibtn {
+#apibtn {
     position: relative;
     left:500px;
 }
