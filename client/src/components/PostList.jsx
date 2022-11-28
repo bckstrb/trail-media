@@ -14,7 +14,7 @@ const PostList = ({ posts }) => {
                         <h5 className="p-2 m-0">
                             {post.postAuthor} <br />
                             <span style={{ fontSize: '1rem' }}>
-                                created this post on {post.createdAt}
+                                Post created on {post.createdAt}
                             </span>
                         </h5>
                         <div className="card-body bg-light p-2">

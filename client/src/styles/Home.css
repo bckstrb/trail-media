@@ -12,9 +12,11 @@
 }
 
 .search {
+    display: flex;
+    flex-direction: column;
+    border: solid;
     width: 50%;
-    max-height: 200px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgb(255, 255, 255);
     display: flex;
     align-items: center;
     border-radius: 60px;
@@ -41,15 +43,20 @@
     width: 25px;
 }
 
-.search button {
+.search-button {
     border: 0;
-    border-radius: 20%;
-    width: 60px;
+    border-radius: 10px;
+    width: 100px;
     height: 40px;
+    margin-top: 10px;
     background: #022e19;
     color: white;
     cursor: pointer;
-    padding-right: 10px;
+}
+
+.search-button:hover {
+    background-color: #67A97B;
+    color: black;
 }
 .latitude {
     text-align: center;

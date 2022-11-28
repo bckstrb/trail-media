@@ -28,6 +28,7 @@ export default function Home({ currentPage, handlePageChange }) {
         city: trail.city,
         name: trail.name,
         description: trail.description,
+        difficulty: trail.difficulty,
         directions: trail.directions,
         image: trail.thumbnail || '',
       }));
@@ -54,7 +55,7 @@ export default function Home({ currentPage, handlePageChange }) {
           <input className="longitude" type="text" value={searchInputLon} placeholder="Enter Longitude" id="lon" name="lon"
             onChange={(e) => setSearchInputLon(e.target.value)}
           />
-          <button type="submit">Search</button>
+          <button className="search-button" type="submit">Search</button>
         </form>
       </div>
 
@@ -72,7 +73,6 @@ export default function Home({ currentPage, handlePageChange }) {
                   <Card.Title>{trails.title}</Card.Title>
                   <p className='small'>Trail Name: {trails.name}</p>
                   <Card.Text>Trail Desciption: {trails.description}</Card.Text>
-                  {/* <Button color="primary" className="apibtn" onClick={<Posts />}>View Trail</Button> */}
                   <a id="apibtn"href="#posts" onClick={() => handlePageChange('Posts')}
                     className={currentPage === 'Posts' ? 'link active' : 'link'}
 

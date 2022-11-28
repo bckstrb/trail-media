@@ -37,7 +37,7 @@
     color: black;
 }
 
-.trail-rating  {
+.trail-rating {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -63,4 +63,21 @@
 
 .trail-posts {
     padding: 10px;
+}
+
+.create-post-form {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.create-post-input {
+    padding: 10px;
+    margin: 5px;
+}
+
+.create-post-button {
+    position: relative;
+    left: 5px;
+    width: 40%;
 }

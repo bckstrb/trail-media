@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_PROFILE } from '../utils/mutations';
 import Auth from '../utils/auth';
-import { Link } from 'react-router-dom';
 
 const styles = {
     containerStyle: {
@@ -55,7 +54,7 @@ export default function SignUp({ currentPage, handlePageChange }) {
         email: '',
         password: '',
       });
-      const [addProfile,  data ] = useMutation(ADD_PROFILE);
+      const [addProfile, data ] = useMutation(ADD_PROFILE);
   
 
     

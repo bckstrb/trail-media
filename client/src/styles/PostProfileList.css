@@ -4,18 +4,17 @@
 }
 
 .profile-posts-div {
-    display: flex;
     border: solid;
     border-color: var(--border-color);
     border-radius: 20px;
     padding: 20px;
-    width: 800px;
-    margin-bottom: 20px;
+    width: 850px;
 }
 
 .profile-post {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-evenly;
     border: solid;
     border-color: var(--border-color);
     border-radius: 8px;
