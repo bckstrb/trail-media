@@ -5,17 +5,27 @@ const postSeeds = require('../seeders/postSeeds.json');
 
 db.once('open', async () => {
   try {
-    await Profile.deleteMany({});
-    await Profile.create(profileSeeds);
-    console.log("Profile's Created!n")
-
     await Post.deleteMany({});
-    await Post.create(postSeeds);
-    console.log("Post's Created!")
+    await Profile.deleteMany({});
 
-    console.log('all done!');
-    process.exit(0);
+    await Profile.create(profileSeeds);
+
+    for (let i = 0; i < postSeeds.length; i++) {
+      const { _id, postAuthor } = await Post.create(postSeeds[i]);
+      const user = await Profile.findOneAndUpdate(
+        { name: postAuthor },
+        {
+          $addToSet: {
+            posts: _id,
+          },
+        }
+      );
+    }
   } catch (err) {
-    throw err;
+    console.error(err);
+    process.exit(1);
   }
+
+  console.log('all done!');
+  process.exit(0);
 });

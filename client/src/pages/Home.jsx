@@ -13,6 +13,7 @@ export default function Home() {
     event.preventDefault();
     try {
       trailSearch(formState.lat, formState.lon);
+      // SLC lat 40.76 lon -111.89
     } catch (e) {
       console.error(e);
     }
