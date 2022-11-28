@@ -77,6 +77,7 @@ export default function Home() {
             name="lat"
             onChange={(e) => setSearchInputLat(e.target.value)}
           />
+          <br></br>
           <input
             className="longitude"
             type="text"
@@ -86,6 +87,7 @@ export default function Home() {
             name="lon"
             onChange={(e) => setSearchInputLon(e.target.value)}
           />
+          <br></br>
           <button type="submit">Search</button>
         </form>
       </div>
