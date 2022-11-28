@@ -41,7 +41,7 @@ const client = new ApolloClient({
 
 function App() {
   // trailSearch(40.76,-111.89);
-  const [currentPage, setCurrentPage] = useState('Posts');
+  const [currentPage, setCurrentPage] = useState('Home');
   const renderPage = () => {
     if (currentPage === 'Home') {
       return <Home currentPage={currentPage} handlePageChange={handlePageChange}/>
