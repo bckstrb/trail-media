@@ -1,3 +1,7 @@
+html {
+    padding-bottom: 50px;
+}
+
 .trail-containter {
     display: flex;
     flex-direction: column;
@@ -23,7 +27,7 @@
     height: 100%;
     width: 100%;
     display: block;
-    background-image: url('../img/Nature-photo.jpg');
+    background-image: url('../img/trees.jpg');
     /* background img not needed */
 }
 
@@ -64,3 +68,23 @@
 .trail-posts {
     padding: 10px;
 }
+
+.post-field {
+    height: 150px;
+    font-size: 20px;
+}
+
+.author-field {
+    font-size: 20px;
+}
+
+Button {
+    background-color: rgb(9, 126, 48);
+    border: none;
+    color: white;
+}
+
+.header {
+    color: white;
+}
+
