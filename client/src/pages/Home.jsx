@@ -2,8 +2,8 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import "../styles/Home.css";
 import trailSearch from "../utils/API";
-
-
+import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
+import Posts from "../pages/Posts"
 
 export default function Home() {
   const [searchedTrails, setSearchedTrails] = useState([]);
@@ -99,6 +99,34 @@ export default function Home() {
           <button  type="submit">Search</button>
         </form>
       </div>
+      
+      <Container>
+        <h2>
+          {searchedTrails.length
+            ? `Viewing ${searchedTrails.length} results:`
+            : 'Search a trail to begin!'}
+        </h2>
+        <CardColumns>
+          {searchedTrails.map((trails) => {
+            return (
+              <Card key={trails.trailId} border='dark'>   
+                <Card.Body>
+                  <Card.Title>{trails.title}</Card.Title>
+                  <p className='small'>Trail Name: {trails.name}</p>
+                  <Card.Text>Trail Desciption: {trails.description}</Card.Text>
+                  <Button color="primary"className="apibtn"onClick={<Posts />}>View Trail</Button>
+
+                </Card.Body>
+                
+              </Card>
+              
+            );
+            
+          })}
+        </CardColumns>
+      </Container>
+      
+     
     </div>
   );
 }
