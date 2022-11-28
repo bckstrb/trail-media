@@ -15,7 +15,7 @@ export default function Posts(apiData) { //get the data that the user chose from
     // maybe it'll be like comments instead of posts?? 
     const { loading, data } = useQuery(QUERY_POSTS);
     const posts = data?.posts || [];
-
+    console.log(apiData);
 
     return (
         <div className='trail-containter'>
