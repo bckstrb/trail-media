@@ -101,8 +101,6 @@ Button {
     color: white;
 }
 
-
-
 .trail-details {
     height: 312px;
     width: 100%;
@@ -131,7 +129,7 @@ Button {
     color: black;
 }
 
-.trail-rating  {
+.trail-rating {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -159,6 +157,24 @@ Button {
     padding: 10px;
 }
 
+
+.create-post-form {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.create-post-input {
+    padding: 10px;
+    margin: 5px;
+}
+
+.create-post-button {
+    position: relative;
+    left: 5px;
+    width: 40%;
+}
+
 .post-field {
     height: 150px;
     font-size: 20px;
@@ -177,4 +193,3 @@ Button {
 .header {
     color: white;
 }
-

@@ -1,27 +1,67 @@
+
 import React, { useState } from "react";
 import "../styles/Posts.css";
 import trailSearch from "../utils/API";
 import { QUERY_POSTS } from "../utils/queries";
-import { useQuery } from '@apollo/client';
+import { ADD_POST } from "../utils/mutations";
+import { useMutation, useQuery } from '@apollo/client';
 import Auth from '../utils/auth';
 import PostList from '../components/PostList';
-import { Navbar, Nav,Button, Container, Modal, Tab } from 'react-bootstrap';
-
-
-
-
-
-
+import { Navbar, Nav, Button, Container, Modal, Tab } from 'react-bootstrap';
 
 
 export default function Posts(apiData) { //get the data that the user chose from the home page from the api call and pass it as variable
+    // console.log(apiData);
+
     const [showModal, setShowModal] = useState(false);
 
-    //probably need the trailId like we did with profileId and hope the trailId is the same each time to add posts to that certain trail?
-    // maybe it'll be like comments instead of posts?? 
+    const [formState, setFormState] = useState({
+        trailId: apiData.id,
+        postText: '',
+        postAuthor: ''
+    })
+    const [addPost, { error }] = useMutation(ADD_POST, {
+        update(cache, { data: { addPost } }) {
+            try {
+                const { posts } = cache.readQuery({ query: QUERY_POSTS });
+
+                cache.writeQuery({
+                    query: QUERY_POSTS,
+                    data: { posts: [addPost, ...posts] },
+                });
+            } catch (e) {
+                console.error(e);
+            }
+        },
+    });
+
     const { loading, data } = useQuery(QUERY_POSTS);
     const posts = data?.posts || [];
-    console.log(apiData);
+
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+        try {
+            const { data } = await addPost({
+                variables: { ...formState },
+            });
+            setFormState({
+                thoughtText: '',
+                thoughtAuthor: '',
+            });
+
+        } catch (err) {
+            console.error(err);
+        }
+    };
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormState({
+            ...formState,
+            [name]: value,
+        });
+    };
+
 
   return (
     <div className="trail-containter">
@@ -48,52 +88,52 @@ export default function Posts(apiData) { //get the data that the user chose from
 
             <div className='trail-posts'>
                 <h5> Posts </h5>
-                <PostList 
+                <PostList
                     posts={posts}
                 />
-                 <Button variant="success" onClick={() => setShowModal(true)}>Create A Post</Button>
+                <Button variant="success" onClick={() => setShowModal(true)}>Create A Post</Button>
             </div>
 
             <Modal
-        size='md'
-        show={showModal}
-        onHide={() => setShowModal(false)}
-        aria-labelledby='signup-modal'>
-        {/* tab container to do either signup or login component */}
-        <Tab.Container defaultActiveKey='login'>
-          <Modal.Header closeButton>
-            <Modal.Title id='signup-modal'>
-              <Nav variant='pills'>
-                <Nav.Item>
-                    <form>
-                        {/* <input type="text" value={formState.posts}placeholder="Post"></input> */}
-                        <input className="post-field" type="text" placeholder="Post"></input>
-                        <br></br>
-                        <input className="author-field" type="text" placeholder="Post Author"></input>
-                        <br></br>
-                        <Button variant="success"type="submit">Create Post</Button>
-                    </form>
-                  
-                </Nav.Item>
-                <Nav.Item>
-                  
-                </Nav.Item>
-              </Nav>
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Tab.Content>
-              <Tab.Pane eventKey='login'>
-               
-              </Tab.Pane>
-              <Tab.Pane eventKey='signup'>
-              
-              </Tab.Pane>
-            </Tab.Content>
-          </Modal.Body>
-        </Tab.Container>
-      </Modal>
-
+                size='md'
+                show={showModal}
+                onHide={() => setShowModal(false)}
+                aria-labelledby='signup-modal'>
+                {/* tab container to do either signup or login component */}
+                <Tab.Container defaultActiveKey='login'>
+                    <Modal.Header closeButton>
+                        <Modal.Title id='signup-modal'>
+                            <Nav variant='pills'>
+                                <Nav.Item>
+                                    <form className="create-post-form"onSubmit={handleFormSubmit}>
+                                        <input
+                                            className='create-post-input'
+                                            type="text"
+                                            name="postText"
+                                            placeholder="Post"
+                                            value={formState.postText}
+                                            onChange={handleChange}
+                                            required={true}
+                                        >
+                                        </input>
+                                        <input
+                                            className='create-post-input'
+                                            type="text"
+                                            name="postAuthor"
+                                            placeholder="Post Author"
+                                            value={formState.postAuthor}
+                                            onChange={handleChange}
+                                            required={true}
+                                        >
+                                        </input>
+                                        <Button className="create-post-button"variant="success" type="submit">Create Post</Button>
+                                    </form>
+                                </Nav.Item>
+                            </Nav>
+                        </Modal.Title>
+                    </Modal.Header>
+                </Tab.Container>
+            </Modal>
         </div>
     )
 
