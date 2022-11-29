@@ -157,7 +157,6 @@ Button {
     padding: 10px;
 }
 
-
 .create-post-form {
     display: flex;
     flex-direction: column;
@@ -184,11 +183,11 @@ Button {
     font-size: 20px;
 }
 
-Button {
+/* Button {
     background-color: rgb(9, 126, 48);
     border: none;
     color: white;
-}
+} */
 
 .header {
     color: white;
