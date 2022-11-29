@@ -1,16 +1,19 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "../styles/Home.css";
 import trailSearch from "../utils/API";
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
 import Posts from "../pages/Posts"
 import { Link } from 'react-router-dom';
+import trailInfo from './Posts';
+import { PostContext } from "../utils/postContext";
 
 export default function Home({ currentPage, handlePageChange }) {
   const [searchedTrails, setSearchedTrails] = useState([]);
   // create state for holding our search field data
   const [searchInputLat, setSearchInputLat] = useState("");
   const [searchInputLon, setSearchInputLon] = useState("");
+  const {setCurrentPost} = useContext(PostContext);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -45,6 +48,11 @@ export default function Home({ currentPage, handlePageChange }) {
 
   };
 
+  const handleSetPostData = (trail) => {
+    setCurrentPost(trail);
+    handlePageChange('Posts');
+  }
+
   return (
     <div>
       <div className="home-container">
@@ -78,9 +86,9 @@ export default function Home({ currentPage, handlePageChange }) {
                   <Card.Title>{trails.title}</Card.Title>
                   <p className='small'>Trail Name: {trails.name}</p>
                   <Card.Text>Trail Desciption: {trails.description}</Card.Text>
-                  <a id="apibtn"href="#posts" onClick={() => handlePageChange('Posts')}
+                  <a id="apibtn"href="#posts" onClick={() => handleSetPostData(trails)}
                     className={currentPage === 'Posts' ? 'link active' : 'link'}
-
+                    
                   >
                     View Trail
                   </a>

@@ -8,31 +8,30 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 }
 
 .search {
-
     display: flex;
     flex-direction: column;
     border: solid;
     width: 50%;
-    background: rgb(255, 255, 255);
+    background: white;
     align-items: center;
     border-radius: 60px;
-    /* padding: 10px 20px; */
+    padding: 10px 20px;
     font: bold;
-    
 }
 
 .search input {
-    background: white;
+    background: transparent;
     flex: 1;
     border: 0;
     outline: none;
     padding: 12px 10px;
-    font-size: 20px;
+    font-size: 25px;
     color: #022e19;
+    margin-top: 4px;
 }
 
 ::placeholder {
@@ -58,15 +57,18 @@
     background-color: #67A97B;
     color: black;
 }
+
 .latitude {
     text-align: center;
 }
+
 .longitude {
-    text-align:center;
+    text-align: center;
 }
+
 #apibtn {
     position: relative;
-    left:500px;
+    left: 500px;
 }
 
 .results-container {

@@ -14,6 +14,7 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import PostProvider, { PostContext } from './utils/postContext';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -64,10 +65,12 @@ function App() {
 
   return (
     <ApolloProvider client={client}>
+      <PostProvider>
       <div>
         <Navbar currentPage={currentPage} handlePageChange={handlePageChange} />
         {renderPage()}
       </div>
+      </PostProvider>
     </ApolloProvider>
   );
 }
