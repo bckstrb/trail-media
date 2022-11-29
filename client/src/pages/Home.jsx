@@ -12,6 +12,7 @@ export default function Home({ currentPage, handlePageChange }) {
   const [searchInputLat, setSearchInputLat] = useState("");
   const [searchInputLon, setSearchInputLon] = useState("");
 //test
+//second test
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
