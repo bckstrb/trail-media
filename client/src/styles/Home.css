@@ -12,26 +12,26 @@
 }
 
 .search {
+
     display: flex;
     flex-direction: column;
     border: solid;
     width: 50%;
     background: rgb(255, 255, 255);
-    display: flex;
     align-items: center;
     border-radius: 60px;
-    padding: 10px 20px;
+    /* padding: 10px 20px; */
     font: bold;
     
 }
 
 .search input {
-    background: transparent;
+    background: white;
     flex: 1;
     border: 0;
     outline: none;
-    padding: 24px 20px;
-    font-size: 30px;
+    padding: 12px 10px;
+    font-size: 20px;
     color: #022e19;
 }
 
@@ -67,4 +67,8 @@
 #apibtn {
     position: relative;
     left:500px;
+}
+
+.results-container {
+    padding-bottom: 50px;
 }

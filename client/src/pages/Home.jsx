@@ -1,5 +1,5 @@
-import axios from 'axios';
-import React, { useState } from 'react';
+import axios from "axios";
+import React, { useState } from "react";
 import "../styles/Home.css";
 import trailSearch from "../utils/API";
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
@@ -9,8 +9,8 @@ import { Link } from 'react-router-dom';
 export default function Home({ currentPage, handlePageChange }) {
   const [searchedTrails, setSearchedTrails] = useState([]);
   // create state for holding our search field data
-  const [searchInputLat, setSearchInputLat] = useState('');
-  const [searchInputLon, setSearchInputLon] = useState('');
+  const [searchInputLat, setSearchInputLat] = useState("");
+  const [searchInputLon, setSearchInputLon] = useState("");
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -52,10 +52,15 @@ export default function Home({ currentPage, handlePageChange }) {
           <input className="latitude" type="text" value={searchInputLat} placeholder="Enter Latitude" id="lat" name="lat"
             onChange={(e) => setSearchInputLat(e.target.value)}
           />
+          <br></br>
           <input className="longitude" type="text" value={searchInputLon} placeholder="Enter Longitude" id="lon" name="lon"
             onChange={(e) => setSearchInputLon(e.target.value)}
           />
+
+          <br></br>
           <button className="search-button" type="submit">Search</button>
+          <br></br>
+          
         </form>
       </div>
 

@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
-import '../styles/Posts.css';
+
+import React, { useState } from "react";
+import "../styles/Posts.css";
+import trailSearch from "../utils/API";
 import { QUERY_POSTS } from "../utils/queries";
 import { ADD_POST } from "../utils/mutations";
 import { useMutation, useQuery } from '@apollo/client';
@@ -60,31 +62,29 @@ export default function Posts(apiData) { //get the data that the user chose from
         });
     };
 
-    return (
-        <div className='trail-containter'>
-            <div className='trail-details'>
-                <img src="#" alt="trail" className='img-background'></img>
-                {/* apiData.thumbnail for background img src*/}
-                {/* need to do inline styling?? */}
-                <div className='trail-info'>
-                    <h2> apiData.name </h2> {/*{apiData.name} */}
-                    <div className='trail-rating'>
-                        <p> apiData.difficutly </p>
-                    </div>
-                    <div className='trail-location'>
-                        <p> apiData.city </p>
-                    </div>
-                </div>
-            </div>
 
-            <div className='trail-description'>
-                <h5 className='description'> Description </h5>
-                <p> apiData.description </p>
-            </div>
-            <div className='trail-direction'>
-                <h5 className='direction'> Directions </h5>
-                <p> apiData.directions </p>
-            </div>
+  return (
+    <div className="trail-containter">
+      <div className="trail-details">
+        <img src="#" className="img-background"></img>
+        {/* apiData.thumbnail for background img src*/}
+        {/* need to do inline styling?? */}
+        <div className="trail-info">
+          <h2 className="header"> apiData.name </h2> 
+          <div className="trail-location">
+            <p className="header"> apiData.city </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="trail-description">
+        <h5 className="description"> Description </h5>
+        <p> apiData.description </p>
+      </div>
+      <div className="trail-direction">
+        <h5 className="direction"> Directions </h5>
+        <p> apiData.directions </p>
+      </div>
 
             <div className='trail-posts'>
                 <h5> Posts </h5>
@@ -95,7 +95,7 @@ export default function Posts(apiData) { //get the data that the user chose from
             </div>
 
             <Modal
-                size='lg'
+                size='md'
                 show={showModal}
                 onHide={() => setShowModal(false)}
                 aria-labelledby='signup-modal'>
@@ -134,7 +134,6 @@ export default function Posts(apiData) { //get the data that the user chose from
                     </Modal.Header>
                 </Tab.Container>
             </Modal>
-
         </div>
     )
 
