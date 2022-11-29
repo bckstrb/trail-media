@@ -62,6 +62,8 @@ export default function Posts(apiData) { //get the data that the user chose from
         });
     };
 
+    
+
 
   return (
     <div className="trail-containter">
