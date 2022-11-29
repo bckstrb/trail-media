@@ -55,7 +55,7 @@ export default function Posts(apiData) { //get the data that the user chose from
             </div>
 
             <Modal
-        size='lg'
+        size='md'
         show={showModal}
         onHide={() => setShowModal(false)}
         aria-labelledby='signup-modal'>
@@ -67,8 +67,10 @@ export default function Posts(apiData) { //get the data that the user chose from
                 <Nav.Item>
                     <form>
                         {/* <input type="text" value={formState.posts}placeholder="Post"></input> */}
-                        <input type="text" placeholder="Post"></input>
-                        <input type="text" placeholder="Post Author"></input>
+                        <input className="post-field" type="text" placeholder="Post"></input>
+                        <br></br>
+                        <input className="author-field" type="text" placeholder="Post Author"></input>
+                        <br></br>
                         <Button variant="success"type="submit">Create Post</Button>
                     </form>
                   
