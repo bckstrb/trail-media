@@ -11,7 +11,7 @@ export default function Home({ currentPage, handlePageChange }) {
   // create state for holding our search field data
   const [searchInputLat, setSearchInputLat] = useState("");
   const [searchInputLon, setSearchInputLon] = useState("");
-
+//test
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
