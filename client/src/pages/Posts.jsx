@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "../styles/Posts.css";
 import trailSearch from "../utils/API";
 import { QUERY_POSTS } from "../utils/queries";
@@ -8,13 +8,14 @@ import { useMutation, useQuery } from '@apollo/client';
 import Auth from '../utils/auth';
 import PostList from '../components/PostList';
 import { Navbar, Nav, Button, Container, Modal, Tab } from 'react-bootstrap';
+import { PostContext } from "../utils/postContext";
 
 
 export default function Posts(apiData) { //get the data that the user chose from the home page from the api call and pass it as variable
     // console.log(apiData);
 
+    const {currentPost} = useContext(PostContext);
     const [showModal, setShowModal] = useState(false);
-
     const [formState, setFormState] = useState({
         trailId: apiData.id,
         postText: '',
@@ -63,27 +64,29 @@ export default function Posts(apiData) { //get the data that the user chose from
     };
 
 
+    console.log(currentPost);
+
   return (
     <div className="trail-containter">
       <div className="trail-details">
-        <img src="#" className="img-background"></img>
+        <img src={currentPost.image} className="img-background"></img>
         {/* apiData.thumbnail for background img src*/}
         {/* need to do inline styling?? */}
         <div className="trail-info">
-          <h2 className="header"> apiData.name </h2> 
+          <h2 className="header"> {currentPost.name} </h2> 
           <div className="trail-location">
-            <p className="header"> apiData.city </p>
+            <p className="header"> {currentPost.city} </p>
           </div>
         </div>
       </div>
 
       <div className="trail-description">
         <h5 className="description"> Description </h5>
-        <p> apiData.description </p>
+        <div> {currentPost.description} </div>
       </div>
       <div className="trail-direction">
         <h5 className="direction"> Directions </h5>
-        <p> apiData.directions </p>
+        <div dangerouslySetInnerHTML={{__html: currentPost.directions}} /> 
       </div>
 
             <div className='trail-posts'>
@@ -99,7 +102,6 @@ export default function Posts(apiData) { //get the data that the user chose from
                 show={showModal}
                 onHide={() => setShowModal(false)}
                 aria-labelledby='signup-modal'>
-                {/* tab container to do either signup or login component */}
                 <Tab.Container defaultActiveKey='login'>
                     <Modal.Header closeButton>
                         <Modal.Title id='signup-modal'>
