@@ -12,4 +12,6 @@ This app will allow a user to search for walking/biking trails by providing a la
 with the name of the city, the name of the trail, a description of the trail, and directions. If the user signs up for an account and logs in, they will be able to 
 post a comment about the trail. 
 
-(github repository)
+https://github.com/bckstrb/trail-media
+
+
